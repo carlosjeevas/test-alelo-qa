@@ -18,7 +18,7 @@ public class GerarArquivo {
 			List<String> cep) throws Exception {
 
 		String caminhoAtual = new File("").getAbsolutePath();
-		String CaminhoArquivo = caminhoAtual + "\\resultado_da_busca.csv";
+		String CaminhoArquivo = caminhoAtual + "\\resultados\\resultado_da_busca.csv";
 		Writer writer = Files.newBufferedWriter(Paths.get(CaminhoArquivo));
 		CSVWriter csvWriter = new CSVWriter(writer);
 		csvWriter.writeNext(cabecalho);
