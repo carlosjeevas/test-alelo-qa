@@ -1,4 +1,4 @@
-# Testes Automatizados de Web e API para avaliação técnica da Alelo
+# Testes Automatizados de Web para avaliação técnica da Alelo
 
 Para uma maior facilidade, execute a automação no Eclipse IDE.
 
