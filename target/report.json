@@ -3,43 +3,43 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2019-12-20T00:11:42.218Z",
+        "start_timestamp": "2020-08-26T01:03:40.009Z",
         "before": [
           {
             "result": {
-              "duration": 7458624200,
+              "duration": 12666603701,
               "status": "passed"
             },
             "match": {
-              "location": "TestRule.iniciate()"
+              "location": "TestRule.iniciate(Scenario)"
             }
           }
         ],
-        "line": 6,
-        "name": "Buscar um CEP qualquer",
+        "line": 16,
+        "name": "Pesquisar um logradouro",
         "description": "",
-        "id": "buscar-cep;buscar-um-cep-qualquer",
+        "id": "buscar-cep;pesquisar-um-logradouro;;2",
         "after": [
           {
             "result": {
-              "duration": 2924078500,
+              "duration": 6955955800,
               "status": "passed"
             },
             "match": {
-              "location": "TestRule.teardown()"
+              "location": "TestRule.teardown(Scenario)"
             }
           }
         ],
         "type": "scenario",
-        "keyword": "Scenario",
+        "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 183766000,
+              "duration": 323063599,
               "status": "passed"
             },
             "line": 7,
-            "name": "Que estou na página de busca de CEP",
+            "name": "Que estou na página de busca",
             "match": {
               "location": "CommonsSteps.que_estou_na_página_de_busca_de_CEP()"
             },
@@ -47,31 +47,43 @@
           },
           {
             "result": {
-              "duration": 287913000,
+              "duration": 489420099,
               "status": "passed"
             },
             "line": 8,
-            "name": "Insiro o Logradouro",
+            "name": "Insiro o valor Rua Martim Francisco",
             "match": {
-              "location": "BuscarLogradouroSteps.insiro_o_Logradouro()"
+              "arguments": [
+                {
+                  "val": "Rua Martim Francisco",
+                  "offset": 15
+                }
+              ],
+              "location": "BuscarCepSteps.insiro_o_cep(String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 338869400,
+              "duration": 645040200,
               "status": "passed"
             },
             "line": 9,
-            "name": "Seleciono o tipo de busca",
+            "name": "Seleciono o tipo de busca Logradouro",
             "match": {
-              "location": "BuscarLogradouroSteps.seleciono_o_tipo_de_busca()"
+              "arguments": [
+                {
+                  "val": "Logradouro",
+                  "offset": 26
+                }
+              ],
+              "location": "BuscarCepSteps.seleciono_o_tipo_de_busca(String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 1333787500,
+              "duration": 1323046600,
               "status": "passed"
             },
             "line": 10,
@@ -83,11 +95,11 @@
           },
           {
             "result": {
-              "duration": 103424200,
+              "duration": 702603800,
               "status": "passed"
             },
             "line": 11,
-            "name": "Devo visualizar as informações do CEP buscado",
+            "name": "Devo visualizar as informações buscadas",
             "match": {
               "location": "BuscarCepSteps.devo_visualizar_as_informações_do_CEP_buscado()"
             },
@@ -95,7 +107,7 @@
           },
           {
             "result": {
-              "duration": 6947457800,
+              "duration": 5081604100,
               "status": "passed"
             },
             "line": 12,
@@ -109,7 +121,7 @@
       }
     ],
     "name": "Buscar CEP",
-    "description": "  Como usuário\n  Quero pesquisar o CEP no site dos Correios\n  Para verificar as informações do local",
+    "description": "  Como usuário\n  Quero pesquisar um CEP no site dos Correios\n  Para verificar as informações do local",
     "id": "buscar-cep",
     "keyword": "Feature",
     "uri": "classpath:features/BuscarLogradouro.feature",

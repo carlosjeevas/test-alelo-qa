@@ -1,12 +1,16 @@
 Feature: Buscar CEP
   Como usuário
-  Quero pesquisar o CEP no site dos Correios
+  Quero pesquisar um CEP no site dos Correios
   Para verificar as informações do local
 
-  Scenario: Buscar um CEP qualquer
-    Given Que estou na página de busca de CEP
-    When Insiro o Logradouro
-    And Seleciono o tipo de busca
+  Scenario Outline: Pesquisar um logradouro
+    Given Que estou na página de busca
+    When Insiro o valor <Valor da busca>
+    And Seleciono o tipo de busca <Tipo de busca>
     And Clico em buscar
-    Then Devo visualizar as informações do CEP buscado
+    Then Devo visualizar as informações buscadas
     And Gravar o resultado da busca em um arquivo
+
+    Examples: 
+      | Valor da busca       | Tipo de busca |
+      | Rua Martim Francisco | Logradouro    |

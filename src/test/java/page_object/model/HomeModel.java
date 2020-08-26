@@ -28,14 +28,14 @@ public class HomeModel extends BaseWebPage {
 	}
 
 	/**
-	 * Insere o CEP
+	 * Insere o valor no campo de CEP/Logradouro
 	 * 
 	 * @author Carlos Moreira
-	 * @param cep
+	 * @param valor
 	 * @throws Exception
 	 */
-	public void inserirCep(String cep) throws Exception {
-		command.send(home.inputBuscarCep(), cep);
+	public void inserirValor(String valor) throws Exception {
+		command.send(home.inputBuscarCep(), valor);
 	}
 
 	/**
@@ -88,7 +88,7 @@ public class HomeModel extends BaseWebPage {
 	 * @author Carlos Moreira
 	 * @throws Exception
 	 */
-	public void gravarDadosEncontrados() throws Exception {
+	public void gravarDadosEncontrados(boolean exibe) throws Exception {
 		
 		List<WebElement> logradouro = home.logradouro();
 		List<WebElement> bairro = home.bairro();
@@ -114,6 +114,13 @@ public class HomeModel extends BaseWebPage {
 		
 		for (WebElement linhaCep : cep) {
 			cepAux.add(linhaCep.getText());
+		}
+		
+		if (exibe) {
+			System.out.println("Logradouro: " + logradouroAux.get(0).toString().replace("[","").replace("]",""));
+			System.out.println("Bairro: " + bairroAux.get(0).toString().replace("[","").replace("]",""));
+			System.out.println("Localidade: " + localidadeAux.get(0).toString().replace("[","").replace("]",""));
+			System.out.println("CEP: " + cepAux.get(0).toString().replace("[","").replace("]",""));
 		}
 		GerarArquivo.gerarArquivo(logradouroAux, bairroAux, localidadeAux, cepAux);
 	}
